@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: lightblue;
+    }
+</style>
+<body>
+    <h1>Function handson of Dom</h1>
+    <h3>Que.1: Create one function with zero parameter having a console statement ?</h3>
+    <p>Ans:
+        <pre>
+            function xyz() 
+            {
+                console.log("Welcome")
+            }
+            xyz()
+        </pre>
+        Reason: calling function by function name i.e. xyz() 
+    </p>
+    <h3>Que.2: Create one function which takes two values as a 
+        parameter and print the sum of them as "Sum of 3, 4 is 7" ?
+    </h3>
+    <p>Ans:
+        <pre>
+            function sum(a,b)
+            {
+                console.log(a+b);
+            }
+            sum(3,4)
+        </pre>
+        Reason: we are calling funtion by passing two arguments i.e. sum(3,4)
+        and inside function declaration that arguments takes by parameter i.e. (a,b)
+        and print in output that is sum of a and b by console.log 
+    </p>
+
+    <h3>Que.3: Create one arrow function ?</h3>
+    <p>Ans:
+        <pre>let arrow = () =>{
+                console.log("Prepbytes")
+                console.log("welcome")
+                }
+             arrow()
+        </pre>
+        Reason: This is arrow function having zero argument and assign that function in a variable
+                so that variable behaves as function. It is implicit multiline arrow funtion because we are
+                not returning from function.
+                similarly there are three more type i.e. explicit with single line ,explicit with multi line,
+                implicit with single line .
+    </p>           
+    <h3>Que.4: "Print output: 
+        <pre>
+            var x = 21;
+            var girl = function () {
+                console.log(x);
+                var x = 20;
+            };
+            girl ();
+        </pre>
+    </h3>    
+    <p>Ans:
+           <h3> output: undefined</h3>
+            Reason: It is printing before assigning value to local x .
+            another reason is that var x =21 is global scope outside function and var x = 20 is local scope within a function 
+            block so same varible behaves  in two different ways at a time.
+    </p>
+
+    <h3>Que.5:Print output: 
+       <pre> 
+        var x = 21;
+        girl ();
+        console.log(x)
+        function girl() {
+            console.log(x);
+            var x = 20;
+        };
+        </pre>
+    </h3>            
+    <p>Ans:
+       <h3>output: undefined 21</h3>       
+        Reason: undefined return from x inside function  beacause it is printing before assigning value to local x.
+        there's a local variable x declared inside the function scope, 
+        which takes precedence over the global x variable.
+        but globla varible not affected by local therfore console.log(x) after function calling will 
+        print value of global x i.e. 21
+            
+    </p>
+    <h3>Que.6:Print output
+        <pre>
+        var x = 21;
+        a();
+        b();
+        
+          function a() {
+            
+           x = 20;
+          console.log(x);
+        };
+         function b() {
+            
+            x = 40;
+           console.log(x);
+        };
+        </pre>
+    </h3>
+    <p>Ans: 
+        <h3>output:20 40</h3>
+        Reason: var x=21 is global variable whose value 21 updated first by calling function i.e. a();
+        so x updted by 20 and print 20 by function a() then return to next line b(); calling funtion b()
+        and now current value of x=20 becomes x=40 by this function and print 40 by function b().
+    </p>
+    <h3>Que.7: Write a function that accepts parameter n and returns factorial of n ?
+    </h3>
+    <p>Ans:</p>
+        <h3>
+            <pre>
+        function factorial(n) //take argument as parameter
+        {
+            let fact = 1;
+            while (n!=0) 
+                {
+                    for (let i=1 ; i<=n; i++)
+                    {
+                        fact = fact *i; //from i=1 to n loop iterate and everytime fact update and when for loop condition false control come out of for loop body
+      
+                    }
+                    n=0;    //for stop while loop after completing factorial of number n
+                }
+            return fact;
+        }
+    const num = factorial(4); //passing 4 as argument 
+    console.log(`factorial of 4 = `,num)
+</pre>
+<h3>   Output: 24  //here</h3>
+    Reason: n=0;  for stop while loop after completing factorial of number n inside for loop  
+    <br>fact = fact *i; from i=1 to n loop iterate and everytime fact update and when for
+    loop condition false control come out of for loop body 
+    <h3>
+
+<h3>Que.8: "Guess the Output"
+    <pre>
+
+    function FindSum(a, b){
+        return a + b;
+    }
+    
+    function DisplayData(data, batch){
+        console.log(`i am from ${data} and My batch is EA${batch}`)
+    }
+    DisplayData("PrepBytes", FindSum(10, 9));
+    </pre>
+</h3>
+<p>Ans:</p>
+    <h3>Output: i am from PrepBytes and My batch is ES19</h3>
+    <h3>    <pre>
+        Reason: data will take string that is agrs in calling function Displaydata and
+        second args is pass as function(10,9) so first function call FindSum(10,9) and function return
+        addition as a+b i.e. 19 to DaisplayData("PrepBytes",19) then take as parameter and print output.
+    </pre>
+</h3>
+<h3>Que.9:"Guess the output:"
+    <pre>
+    Abc();
+    const Abc = function(){
+        let value = 20;
+        console.log(value);
+    }
+    </pre>
+</h3>
+<p>Ans:</p>
+<h3>
+    <pre>Output:20
+    Reason: It is First Class function because function assign to a variable and we are calling
+    variable as function .
+
+    </pre>
+</h3>
+<h3>Que.10:  "Guess the output" 
+    <pre>
+    var a = 10;
+    (function (){
+        console.log(a);
+        var a = 20;
+    })();
+    </pre>
+</h3>
+<p>Ans:</p>
+<h3>Output:Undefined
+    <pre>Reason:It is IIFE function used where data privacy is first priority it is self invoking 
+        function.undefined because print before assigning value  local variable i.e.var a = 20;
+    </pre>
+</h3>
+<h3>Que.10:"Guess the Output"
+    <pre>
+        const greet =  function(name)
+        {
+            return function(m)
+            {
+                console.log(`Hi!! ${name}, ${m}`);
+            }
+        }
+        const greet_message = greet('EA19');
+        greet_message(""Welcome To PrepBytes"")
+    </pre>
+</h3>
+<p>Ans:
+    <h3>Output:Syntax Error 
+    <pre>Reason: because we can't use same quotes  two times for string either we can use
+    like ('""') or ("''") 
+    </pre>
+</p>
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
